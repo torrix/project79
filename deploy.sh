@@ -12,6 +12,9 @@ git pull origin main
 # Install dependencies based on lock file
 php8.2 /usr/local/bin/composer install --no-interaction --prefer-dist --optimize-autoloader
 
+# Build frontend
+npm run build
+
 # Migrate database
 #php8.2 artisan migrate --force
 
