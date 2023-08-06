@@ -15,4 +15,4 @@ jobs:
           username: ${{ vars.USER }}
           host: ${{ vars.HOST }}
           key: ${{ secrets.PRIVATE_SSH_KEY }}
-          script: "cd ${{ vars.PATH }} &&  sudo sh deploy.sh"
+          script: "cd ${{ vars.PATH }} &&  sh deploy.sh"
