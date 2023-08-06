@@ -5,7 +5,7 @@
         <div class="uk-container">
             <h1 class="uk-heading-divider">Project79</h1>
             <p>
-                Coming soon!
+                Coming soon.
             </p>
         </div>
     </div>
