@@ -25,31 +25,6 @@
                             <li>
                                 <a href="{{ route('demo') }}">Demo</a>
                             </li>
-                            <li>
-                                <a href="#">Useful Links</a>
-                                <div class="uk-navbar-dropdown uk-navbar-dropdown-width-3">
-                                    <div class="uk-navbar-dropdown-grid uk-child-width-1-3" data-uk-grid>
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li class="uk-nav-header">Laravel</li>
-                                                @include('laravel-uikit::demo.laravel')
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li class="uk-nav-header">UIkit</li>
-                                                @include('laravel-uikit::demo.uikit')
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li class="uk-nav-header">Vue.js</li>
-                                                @include('laravel-uikit::demo.vuejs')
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                     <div class="uk-navbar-right">
