@@ -12,7 +12,7 @@ jobs:
       - name: Deploy to production
         uses: appleboy/ssh-action@master
         with:
-          username: ${{ variables.USER }}
-          host: ${{ variables.HOST }}
+          username: ${{ vars.USER }}
+          host: ${{ vars.HOST }}
           key: ${{ secrets.PRIVATE_SSH_KEY }}
           script: "cd /var/www/project &&  sudo sh deploy.sh"
