@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+      class="uk-background-secondary">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,7 +75,7 @@
         @yield('content')
     </main>
 
-    <footer class="uk-section uk-section-xsmall uk-section-secondary">
+    <footer class="uk-section uk-section-xsmall uk-section-primary">
         <div class="uk-container">
             <div class="uk-grid uk-text-center uk-text-left@s uk-flex-middle" data-uk-grid>
                 <div class="uk-text-small uk-text-muted uk-width-1-3@s">
