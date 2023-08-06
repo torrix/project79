@@ -3,13 +3,6 @@ name: Deploy to production
 on:
   push:
     branches: [main]
-    paths:
-      - "app/**"
-      - "config/**"
-      - "database/**"
-      - "routes/**"
-      - "resources/**"
-      - "tests/**"
 jobs:
   deploy:
     name: Deploy to production
