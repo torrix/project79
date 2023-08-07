@@ -6,6 +6,8 @@ $white: #EEEEEE;
 
 $global-primary-background: $darkblue;
 $global-secondary-background: $blue;
+$inverse-button-primary-background: $yellow;
+$inverse-button-primary-color: $darkblue;
 
 @import "uikit/src/scss/variables-theme.scss";
 @import "uikit/src/scss/mixins-theme.scss";

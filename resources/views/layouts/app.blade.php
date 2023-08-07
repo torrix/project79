@@ -79,7 +79,7 @@
         <div class="uk-container">
             <div class="uk-grid uk-text-center uk-text-left@s uk-flex-middle" data-uk-grid>
                 <div class="uk-text-small uk-text-muted uk-width-1-3@s">
-                    Lovingly cobbled together by
+                    A project by
                     <a target="_blank" href="https://torrix.uk/">Matt Fletcher at Torrix</a>
                 </div>
                 <div class="uk-text-center uk-width-1-3@s">
