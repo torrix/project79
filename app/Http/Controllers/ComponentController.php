@@ -19,6 +19,10 @@ class ComponentController extends Controller
 
     public function css(Component $component): Response
     {
+        if ($component->css) {
+            return response($component->css)->header('Content-Type', 'text/css');
+        }
+
         $compiler = new Compiler();
 
         $implode = implode(PHP_EOL, [
@@ -35,6 +39,9 @@ class ComponentController extends Controller
         } catch (Exception $e) {
             $css = '/* ' . $e->getMessage() . '*/';
         }
+
+        $component->css = $css;
+        $component->save();
 
         return response($css)->header('Content-Type', 'text/css');
     }

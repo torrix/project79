@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('html')->nullable();
             $table->string('overrides')->nullable();
             $table->string('scss')->nullable();
+            $table->string('css')->nullable();
             $table->timestamps();
         });
     }

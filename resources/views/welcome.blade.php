@@ -7,13 +7,13 @@
                 A collection of downloadable components for UIkit
             </h1>
             <div data-uk-filter="target: .p79-components; animation: fade; duration: 500">
-                <div class="uk-grid-small uk-grid-divider uk-child-width-auto" data-uk-grid>
-                    <div>
+                <div class="uk-grid uk-grid-small uk-grid-divider" data-uk-grid>
+                    <div class="uk-width-auto">
                         <ul class="uk-subnav uk-subnav-pill" data-uk-margin>
                             <li class="uk-active" data-uk-filter-control><a href="#">All</a></li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="uk-width-auto">
                         <ul class="uk-subnav uk-subnav-pill" data-uk-margin>
                             <li data-uk-filter-control="filter: [data-tags*='light']; group: data-color">
                                 <a href="#">Light</a>
@@ -23,7 +23,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="uk-width-auto">
                         <ul class="uk-subnav uk-subnav-pill" data-uk-margin>
                             <li data-uk-filter-control="filter: [data-tags*='users']; group: size">
                                 <a href="#">Users</a>
@@ -35,7 +35,8 @@
                     </div>
                 </div>
 
-                <ul class="p79-components" data-uk-grid="masonry: true">
+                <ul class="uk-grid p79-components"
+                    data-uk-grid="masonry: true">
                     @foreach ($components as $component)
                         <li data-tags="light users" class="uk-width-1-4@l">
                             <div class="uk-card uk-card-primary uk-card-small uk-border-rounded uk-box-shadow-bottom">

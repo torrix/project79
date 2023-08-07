@@ -17,6 +17,7 @@ class ComponentFactory extends Factory
             'html'      => '<a class="uk-button uk-button-primary">' . fake()->sentence() . '</a>',
             'overrides' => '$button-primary-background: ' . fake()->hexColor() . ';',
             'scss'      => '',
+            'css'       => '',
         ];
     }
 }
