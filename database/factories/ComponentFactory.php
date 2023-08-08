@@ -14,10 +14,11 @@ class ComponentFactory extends Factory
     {
         return [
             'name'      => fake()->name(),
-            'html'      => '<a class="uk-button uk-button-primary">' . fake()->sentence() . '</a>',
+            'html'      => '<a class="uk-button uk-button-primary">' . fake()->word() . '</a>',
             'overrides' => '$button-primary-background: ' . fake()->hexColor() . ';',
             'scss'      => '',
             'css'       => '',
+            'theme'     => fake()->randomElement(['light', 'dark']),
         ];
     }
 }

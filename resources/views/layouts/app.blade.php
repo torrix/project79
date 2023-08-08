@@ -32,14 +32,14 @@
                         <ul class="uk-navbar-nav">
                             <!-- Authentication Links -->
                             @guest
-                                @if (Route::has('login'))
+                                @if (Route::has('filament.auth.login'))
                                     <li>
-                                        <a href="{{ route('login') }}">{{ __('Log In') }}</a>
+                                        <a href="{{ route('filament.auth.login') }}">{{ __('Log In') }}</a>
                                     </li>
                                 @endif
-                                @if (Route::has('register'))
+                                @if (Route::has('filament.auth.register'))
                                     <li>
-                                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        <a href="{{ route('filament.auth.register') }}">{{ __('Register') }}</a>
                                     </li>
                                 @endif
                             @else
@@ -50,12 +50,12 @@
                                     <div class="uk-navbar-dropdown">
                                         <ul class="uk-nav uk-navbar-dropdown-nav">
                                             <li>
-                                                <a href="{{ route('logout') }}"
+                                                <a href="{{ route('filament.auth.logout') }}"
                                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                     {{ __('Log Out') }}
                                                 </a>
 
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                <form id="logout-form" action="{{ route('filament.auth.logout') }}" method="POST"
                                                       style="display: none;">
                                                     @csrf
                                                 </form>

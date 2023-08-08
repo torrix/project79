@@ -38,12 +38,14 @@
                 <ul class="uk-grid p79-components"
                     data-uk-grid="masonry: true">
                     @foreach ($components as $component)
-                        <li data-tags="light users" class="uk-width-1-4@l">
-                            <div class="uk-card uk-card-primary uk-card-small uk-border-rounded uk-box-shadow-bottom">
-                                <div class="uk-card-media-top">
-                                    <img src="https://placekitten.com/300/200"
-                                         alt="{{$component->name}}">
-                                </div>
+                        <li data-tags="{{$component->theme}} users" class="uk-width-1-4@l uk-width-1-2@m uk-width-1-1">
+                            <div class="uk-card uk-card-primary uk-card-small uk-border-rounded uk-box-shadow-bottom uk-width-1-1">
+                                @if($component->thumbnail)
+                                    <div class="uk-card-media-top">
+                                        <img src="{{ asset('storage/' . $component->thumbnail) }}"
+                                             alt="{{$component->name}}">
+                                    </div>
+                                @endif
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">{{$component->name}}</h3>
                                     <div class="uk-flex uk-flex-between">
