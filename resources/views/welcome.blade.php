@@ -23,7 +23,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="uk-width-auto">
+                    {{--<div class="uk-width-auto">
                         <ul class="uk-subnav uk-subnav-pill" data-uk-margin>
                             <li data-uk-filter-control="filter: [data-tags*='users']; group: size">
                                 <a href="#">Users</a>
@@ -32,7 +32,7 @@
                                 <a href="#">Ecommerce</a>
                             </li>
                         </ul>
-                    </div>
+                    </div>--}}
                 </div>
 
                 <ul class="uk-grid p79-components"
@@ -49,9 +49,10 @@
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">{{$component->name}}</h3>
                                     <div class="uk-flex uk-flex-between">
-                                        <a href="#" class="uk-button uk-button-default uk-border-rounded">Info</a>
+                                        <a href="/component/{{$component->id}}"
+                                           class="uk-button uk-button-default uk-border-rounded">Info</a>
                                         <div data-uk-lightbox>
-                                            <a href="/component/{{$component->id}}"
+                                            <a href="/component/{{$component->id}}/preview"
                                                data-caption="{{$component->name}}"
                                                data-type="iframe"
                                                class="uk-button uk-button-primary uk-border-rounded">Preview</a>

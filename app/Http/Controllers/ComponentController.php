@@ -10,7 +10,14 @@ class ComponentController extends Controller
 {
     public function show(Component $component): View
     {
-        return view('component', [
+        return view('component.show', [
+            'component' => $component,
+        ]);
+    }
+
+    public function preview(Component $component): View
+    {
+        return view('component.preview', [
             'component' => $component,
         ]);
     }
