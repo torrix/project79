@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script async src="{{ env('UMAMI_URL') }}/script.js" data-website-id="{{ env('UMAMI_WEBSITE_ID') }}"></script>
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

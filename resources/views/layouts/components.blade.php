@@ -6,6 +6,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <script async src="{{ env('UMAMI_URL') }}/script.js" data-website-id="{{ env('UMAMI_WEBSITE_ID') }}"></script>
+
     <link rel="stylesheet" href="/css/@yield('id')" type="text/css">
 </head>
 <body>
