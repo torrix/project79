@@ -46,6 +46,9 @@
                                 @endif
                             @else
                                 <li>
+                                    <a href="{{ route('filament.pages.dashboard') }}">Admin</a>
+                                </li>
+                                <li>
                                     <a href="#">
                                         {{ Auth::user()->name }}
                                     </a>

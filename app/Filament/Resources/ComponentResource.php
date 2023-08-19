@@ -3,9 +3,15 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ComponentResource\Pages;
+use App\Filament\Resources\ComponentResource\RelationManagers\TagsRelationManager;
 use App\Models\Component;
 use Exception;
-use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TagsInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -21,35 +27,32 @@ class ComponentResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-                Forms\Components\TextInput::make('name')->required()->label('Component Name'),
-                Forms\Components\FileUpload::make('thumbnail')->required()->label('Thumbnail'),
-                Forms\Components\Textarea::make('overrides')->label('Variable Overrides'),
-                Forms\Components\Textarea::make('scss')->label('Custom SCSS'),
-                Forms\Components\Textarea::make('html')->required()->label('HTML'),
-                Forms\Components\Select::make('theme')->required()->label('Theme')->options([
-                        'light' => 'Light',
-                        'dark'  => 'Dark',
-                    ]),
-            ]);
+            TextInput::make('name')->required()->label('Component Name'),
+            FileUpload::make('thumbnail')->required()->label('Thumbnail'),
+            Textarea::make('description')->label('Description'),
+            Textarea::make('html')->required()->label('HTML'),
+            Textarea::make('overrides')->label('Variable Overrides'),
+            Textarea::make('scss')->label('Custom SCSS'),
+            Select::make('user_id')
+                ->relationship('user', 'name'),
+            Select::make('theme')->required()->label('Theme')->options([
+                'light' => 'Light',
+                'dark'  => 'Dark',
+            ]),
+        ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table->columns([
-                Tables\Columns\TextColumn::make('name')->sortable(),
-                Tables\Columns\TextColumn::make('theme')->sortable(),
-            ])->filters([//
-            ])->actions([
-                Tables\Actions\EditAction::make(),
-            ])->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
-            ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [//
-        ];
+            Tables\Columns\TextColumn::make('name')->sortable(),
+            Tables\Columns\TextColumn::make('theme')->sortable(),
+        ])->filters([//
+        ])->actions([
+            Tables\Actions\EditAction::make(),
+        ])->bulkActions([
+            Tables\Actions\DeleteBulkAction::make(),
+        ]);
     }
 
     public static function getPages(): array
@@ -80,5 +83,12 @@ class ComponentResource extends Resource
             $css = '/* ' . $e->getMessage() . '*/';
         }
         return $css;
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            TagsRelationManager::class,
+        ];
     }
 }

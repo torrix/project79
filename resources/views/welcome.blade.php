@@ -39,16 +39,23 @@
                     data-uk-grid="masonry: true">
                     @foreach ($components as $component)
                         <li data-tags="{{$component->theme}} users" class="uk-width-1-4@l uk-width-1-2@m uk-width-1-1">
-                            <div class="uk-card uk-card-primary uk-card-small uk-border-rounded uk-box-shadow-medium uk-width-1-1">
+                            <div
+                                class="uk-card uk-card-primary uk-card-small uk-border-rounded uk-box-shadow-medium uk-width-1-1">
                                 @if($component->thumbnail)
                                     <div class="uk-card-media-top">
-                                        <img src="{{ asset('storage/' . $component->thumbnail) }}"
-                                             class="uk-width-1-1"
-                                             alt="{{$component->name}}">
+                                        <a href="/component/{{$component->id}}">
+                                            <img src="{{ asset('storage/' . $component->thumbnail) }}"
+                                                 class="uk-width-1-1"
+                                                 alt="{{$component->name}}">
+                                        </a>
                                     </div>
                                 @endif
                                 <div class="uk-card-body">
-                                    <h3 class="uk-card-title">{{$component->name}}</h3>
+                                    <h3 class="uk-card-title">
+                                        <a href="/component/{{$component->id}}">
+                                            {{$component->name}}
+                                        </a>
+                                    </h3>
                                     <div class="uk-flex uk-flex-between">
                                         <a href="/component/{{$component->id}}"
                                            class="uk-button uk-button-default uk-border-rounded">Info</a>

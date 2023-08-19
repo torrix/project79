@@ -3,10 +3,8 @@
 namespace App\Filament\Resources\ComponentResource\Pages;
 
 use App\Filament\Resources\ComponentResource;
-use Exception;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
-use ScssPhp\ScssPhp\Compiler;
 
 class EditComponent extends EditRecord
 {
