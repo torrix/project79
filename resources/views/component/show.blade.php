@@ -30,6 +30,7 @@ $scss      = '// Custom CSS' . PHP_EOL . $component->scss;
                     @if($component->thumbnail)
                         <div class="uk-card-media-top">
                             <img src="{{ asset('storage/' . $component->thumbnail) }}"
+                                 class="uk-width-1-1"
                                  alt="{{$component->name}}">
                         </div>
                     @endif
