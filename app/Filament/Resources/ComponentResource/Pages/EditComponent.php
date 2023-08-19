@@ -21,24 +21,7 @@ class EditComponent extends EditRecord
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        $compiler = new Compiler();
-
-        $implode = implode(PHP_EOL, [
-            $data['overrides'],
-            '@import "variables-theme.scss";',
-            '@import "mixins-theme.scss";',
-            '@import "uikit-theme.scss";',
-            $data['scss'],
-        ]);
-
-        try {
-            $compiler->setImportPaths('../node_modules/uikit/src/scss/');
-            $css = $compiler->compile($implode);
-        } catch (Exception $e) {
-            $css = '/* ' . $e->getMessage() . '*/';
-        }
-
-        $data['css'] = $css;
+        $data['css'] = ComponentResource::compileCss($data);
 
         return $data;
     }

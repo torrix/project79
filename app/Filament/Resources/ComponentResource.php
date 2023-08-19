@@ -4,11 +4,13 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ComponentResource\Pages;
 use App\Models\Component;
+use Exception;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use ScssPhp\ScssPhp\Compiler;
 
 class ComponentResource extends Resource
 {
@@ -57,5 +59,26 @@ class ComponentResource extends Resource
             'create' => Pages\CreateComponent::route('/create'),
             'edit'   => Pages\EditComponent::route('/{record}/edit'),
         ];
+    }
+
+    public static function compileCss(array $data): string
+    {
+        $compiler = new Compiler();
+
+        $implode = implode(PHP_EOL, [
+            $data['overrides'],
+            '@import "variables-theme.scss";',
+            '@import "mixins-theme.scss";',
+            '@import "uikit-theme.scss";',
+            $data['scss'],
+        ]);
+
+        try {
+            $compiler->setImportPaths('../node_modules/uikit/src/scss/');
+            $css = $compiler->compile($implode);
+        } catch (Exception $e) {
+            $css = '/* ' . $e->getMessage() . '*/';
+        }
+        return $css;
     }
 }
