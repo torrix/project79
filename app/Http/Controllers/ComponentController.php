@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Component;
+use Highlight\Highlighter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Response;
 
@@ -10,8 +11,11 @@ class ComponentController extends Controller
 {
     public function show(Component $component): View
     {
+        $highlighter = new Highlighter();
+
         return view('component.show', [
-            'component' => $component,
+            'component'   => $component,
+            'highlighter' => $highlighter,
         ]);
     }
 

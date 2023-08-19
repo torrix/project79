@@ -3,7 +3,7 @@
 @section('content')
     <div class="uk-section uk-section-small uk-section-secondary">
         <div class="uk-container">
-            <h1 class="uk-heading-divider">
+            <h1 class="uk-heading-divider uk-h3">
                 A collection of downloadable components for UIkit
             </h1>
             <div data-uk-filter="target: .p79-components; animation: fade; duration: 500">

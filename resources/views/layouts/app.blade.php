@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }} - A collection of downloadable components for UIkit</title>
 
     <!-- Styles -->
     @vite(['resources/sass/app.scss'])
