@@ -11,11 +11,11 @@ return new class extends Migration
         Schema::create('components', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('html')->nullable();
-            $table->string('overrides')->nullable();
-            $table->string('scss')->nullable();
-            $table->text('thumbnail')->nullable();
-            $table->string('css')->nullable();
+            $table->text('html')->nullable();
+            $table->text('overrides')->nullable();
+            $table->text('scss')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->text('css')->nullable();
             $table->enum('theme', ['light', 'dark'])->nullable();
             $table->timestamps();
         });
