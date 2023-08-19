@@ -15,7 +15,7 @@ return new class extends Migration
             $table->text('overrides')->nullable();
             $table->text('scss')->nullable();
             $table->string('thumbnail')->nullable();
-            $table->text('css')->nullable();
+            $table->longText('css')->nullable();
             $table->enum('theme', ['light', 'dark'])->nullable();
             $table->timestamps();
         });
