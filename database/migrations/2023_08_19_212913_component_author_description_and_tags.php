@@ -19,8 +19,8 @@ return new class extends Migration
 
         Schema::create('component_tag', function (Blueprint $table) {
             $table->id();
-            $table->integer('component_id');
-            $table->integer('tag_id');
+            $table->bigInteger('component_id');
+            $table->bigInteger('tag_id');
             $table->timestamps();
 
             $table
